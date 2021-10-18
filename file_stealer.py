@@ -87,7 +87,7 @@ def discover_files(startpath):
             ext = absolute_path.split(".")[-1]
             if ext in extensions:
                 # Only get Files that are not bigger than 10MB
-                if os.stat(absolute_path).st_size < 52428800:
+                if os.stat(absolute_path).st_size <= 10485760:
                     yield absolute_path
 
 
